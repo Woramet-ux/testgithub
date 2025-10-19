@@ -1,0 +1,101 @@
+/* --- Global Styles --- */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --light-gray: #f8f9fa;
+    --dark-text: #212529;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 3rem; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section:not(#hero) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* --- Navbar --- */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+.nav-link {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.nav-link:hover, .navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* --- Hero Section --- */
+#hero {
+    /* สร้าง Gradient ที่น่าสนใจ */
+    background: linear-gradient(135deg, #007bff, #1c2a5a);
+    min-height: 100vh;
+    position: relative;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* --- Portfolio Card Hover Effect --- */
+.project-card {
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Animation on Scroll --- */
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
